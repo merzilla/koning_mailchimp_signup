@@ -10,17 +10,11 @@
             </f:for>
         </f:if>
     </f:form.validationResults>
-    <f:form action="create" name="subscriber" object="{subscriber}" objectName="subscriber">
-        <h2>
-            <f:translate key="form.show.header"/>
-        </h2>
-        <p>
-            <f:translate key="form.show.text"/>
-        </p>
-
+    <f:form action="create" name="subscriber" object="{subscriber}" objectName="subscriber"
+            class="mmc-dms-form mailchimpWidget inlineLabel">
         <div class="fieldWrap powermail_fieldwrap">
-            <p class="form-row">
-                <ul>
+            <div class="form-row">
+                <ul class="social form-row">
                     <li>
                         <f:form.radio property="salutation" value="1" id="salutation_male"/>
                         <label for="salutation_male">Herr</label>
@@ -30,7 +24,7 @@
                         <label for="salutation_female">Frau</label>
                     </li>
                 </ul>
-            </p>
+            </div>
             <p class="form-row">
                 <f:form.textfield property="firstName" placeholder="Vorname"/>
             </p>
@@ -38,7 +32,8 @@
                 <f:form.textfield property="lastName" placeholder="Nachname"/>
             </p>
             <p class="form-row">
-                <f:form.textfield property="email" type="text" errorClass="validate required email" placeholder="E-Mail" />
+                <f:form.textfield property="email" type="text" errorClass="validate required email"
+                                  placeholder="E-Mail"/>
             </p>
             <p class="form-row">
                 <f:form.submit value="{f:translate(key: 'form.show.submit')}"/>
