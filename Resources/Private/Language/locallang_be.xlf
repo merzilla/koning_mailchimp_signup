@@ -31,6 +31,15 @@
             <trans-unit id="tx_koningmailchimpsignup_domain_model_subscriber.list">
                 <source>List</source>
             </trans-unit>
+            <trans-unit id="tx_koningmailchimpsignup_domain_model_subscriber.first_name">
+                <source>First name</source>
+            </trans-unit>
+            <trans-unit id="tx_koningmailchimpsignup_domain_model_subscriber.last_name">
+                <source>Last name</source>
+            </trans-unit>
+            <trans-unit id="tx_koningmailchimpsignup_domain_model_subscriber.salutation">
+                <source>Salutation</source>
+            </trans-unit>
 
             <trans-unit id="plugin.form">
                 <source>MailChimp sign up form</source>

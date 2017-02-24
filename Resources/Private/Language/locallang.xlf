@@ -38,6 +38,12 @@
             <trans-unit id="form.success.text">
                 <source>You have been successfully subscribed to our newsletter</source>
             </trans-unit>
+            <trans-unit id="salutation_1">
+                <source>Herr</source>
+            </trans-unit>
+            <trans-unit id="salutation_2">
+                <source>Frau</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

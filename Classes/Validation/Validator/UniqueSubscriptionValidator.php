@@ -44,11 +44,15 @@ class UniqueSubscriptionValidator extends \TYPO3\CMS\Extbase\Validation\Validato
     }
 
     /**
-     * @param mixed $value
+     * @param \Keizer\KoningMailchimpSignup\Domain\Model\Subscriber $subsriber
      * @return void
      */
-    protected function isValid($value)
+    protected function isValid($subsriber)
     {
+        $value = $subsriber->getEmail();
+        if (!\TYPO3\CMS\Core\Utility\GeneralUtility::validEmail($value)) {
+            $this->addError('Please enter a valid e-mail address', 1221559976);
+        }
         /** @var \TYPO3\CMS\Extbase\Service\FlexFormService $flexFormService */
         $flexFormService = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Service\\FlexFormService');
         $flexFormArray = $flexFormService->convertFlexFormContentToArray($this->contentObject->data['pi_flexform']);

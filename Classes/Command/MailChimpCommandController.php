@@ -92,6 +92,11 @@ class MailChimpCommandController extends  \TYPO3\CMS\Extbase\Mvc\Controller\Comm
                     'lists/' . $subscriber->getList()->getIdentifier() . '/members',
                     [
                         'email_address' => $subscriber->getEmail(),
+                        'merge_fields' => [
+                            'FNAME' => (!empty($subscriber->getFirstName())) ? $subscriber->getFirstName() : '',
+                            'LNAME' => (!empty($subscriber->getLastName())) ? $subscriber->getLastName() : '',
+                            'SALUTATION' => (!empty($subscriber->getSalutation())) ? $subscriber->getSalutation() : 'Herr',
+                        ],
                         'status' => 'subscribed'
                     ]
                 );

@@ -48,17 +48,15 @@ class FormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * Create MailChimp subscriber
      *
-     * @param string $email
-     * @validate $email NotEmpty, EmailAddress, \Keizer\KoningMailchimpSignup\Validation\Validator\UniqueSubscriptionValidator
+     * @param \Keizer\KoningMailchimpSignup\Domain\Model\Subscriber $subscriber
+     * @validate $subscriber NotEmpty, \Keizer\KoningMailchimpSignup\Validation\Validator\UniqueSubscriptionValidator
      * @return void
      */
-    public function createAction($email)
+    public function createAction($subscriber)
     {
         /** @var SubscriberList $list */
         $list = $this->subscriberListRepository->findByUid($this->settings['data']['list']);
         if ($list !== null) {
-            $subscriber = new Subscriber();
-            $subscriber->setEmail($email);
             $subscriber->setList($list);
             $this->subscriberRepository->add($subscriber);
 

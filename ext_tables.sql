@@ -29,6 +29,9 @@ CREATE TABLE tx_koningmailchimpsignup_domain_model_subscriber (
 
     email varchar(255) DEFAULT '',
     list int(11) DEFAULT '0' NOT NULL,
+    first_name varchar(255) DEFAULT '',
+    last_name varchar(255) DEFAULT '',
+    salutation varchar(255) DEFAULT '',
 
     PRIMARY KEY (uid)
 );

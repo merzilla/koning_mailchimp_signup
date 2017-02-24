@@ -24,11 +24,11 @@ return array(
         'readOnly' => true
     ),
     'interface' => array(
-        'showRecordFieldList' => 'email, list'
+        'showRecordFieldList' => 'email, list, first_name, last_name, salutation'
     ),
     'types' => array(
         0 => array(
-            'showitem' => 'email, list'
+            'showitem' => 'email, list, first_name, last_name, salutation'
         )
     ),
     'palettes' => array(),
@@ -48,6 +48,30 @@ return array(
                 'type' => 'select',
                 'foreign_table' => 'tx_koningmailchimpsignup_domain_model_subscriberlist'
             ),
+        ),
+        'first_name' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:koning_mailchimp_signup/Resources/Private/Language/locallang_be.xlf:tx_koningmailchimpsignup_domain_model_subscriber.first_name',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+            )
+        ),
+        'last_name' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:koning_mailchimp_signup/Resources/Private/Language/locallang_be.xlf:tx_koningmailchimpsignup_domain_model_subscriber.last_name',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+            )
+        ),
+        'salutation' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:koning_mailchimp_signup/Resources/Private/Language/locallang_be.xlf:tx_koningmailchimpsignup_domain_model_subscriber.salutation',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+            )
         ),
     ),
 );
