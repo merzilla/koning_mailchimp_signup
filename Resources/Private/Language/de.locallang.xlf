@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2016-02-20T19:30:32Z" product-name="koning_mailchimp_signup">
+        <header/>
+        <body>
+            <trans-unit id="form.show.header">
+                <target>Newsletter</target>
+            </trans-unit>
+            <trans-unit id="form.show.text">
+                <target>Melden Sie sich für unseren Newsletter an, um aktuell zu bleiben.</target>
+            </trans-unit>
+            <trans-unit id="form.show.submit">
+                <target>Jetzt abonnieren</target>
+            </trans-unit>
+            <trans-unit id="form.show.error.email.1461581334">
+                <target>Sie haben den Newsletter bereits abonniert.</target>
+            </trans-unit>
+            <trans-unit id="form.show.error.email.1221560718">
+                <target>Bitte geben Sie Ihre E-Mail Adresse ein.</target>
+            </trans-unit>
+            <trans-unit id="form.show.error.email.1221559976">
+                <target>Bitte geben sie eine gültige E-Mail Adresse ein.</target>
+            </trans-unit>
+            <trans-unit id="form.show.error.email.1461581360">
+                <target>Die Newsletter Liste konnte nicht gefunden werden, bitte kontaktieren Sie uns.</target>
+            </trans-unit>
+
+            <trans-unit id="form.error.header">
+                <target>Newsletter</target>
+            </trans-unit>
+            <trans-unit id="form.error.text">
+                <target>Bei der Registrierung ist ein Fehler aufgetreten. Bitte versuchen Sie es später nochmals.</target>
+            </trans-unit>
+
+            <trans-unit id="form.success.header">
+                <target>Newsletter</target>
+            </trans-unit>
+            <trans-unit id="form.success.text">
+                <target>Sie haben sich erfolgreich für unseren Newsletter registriert.</target>
+            </trans-unit>
+            <trans-unit id="salutation_1">
+                <target>Herr</target>
+            </trans-unit>
+            <trans-unit id="salutation_2">
+                <target>Frau</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
