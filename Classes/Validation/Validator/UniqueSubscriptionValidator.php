@@ -57,6 +57,11 @@ class UniqueSubscriptionValidator extends \TYPO3\CMS\Extbase\Validation\Validato
         $flexFormService = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Service\\FlexFormService');
         $flexFormArray = $flexFormService->convertFlexFormContentToArray($this->contentObject->data['pi_flexform']);
 
+        // try with uid 1
+        if (empty($flexFormArray)) {
+            $flexFormArray['settings']['data']['list'] = 1;
+        }
+
         /** @var SubscriberList $list */
         $list = $this->subscriberListRepository->findByUid($flexFormArray['settings']['data']['list']);
         if ($list !== null) {
