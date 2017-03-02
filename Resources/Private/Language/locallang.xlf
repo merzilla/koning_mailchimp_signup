@@ -12,17 +12,23 @@
             <trans-unit id="form.show.submit">
                 <source>Sign up</source>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1461581334">
+            <trans-unit id="form.show.error.subscriber.1461581334">
                 <source>You are already subscribed to this newsletter</source>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1221560718">
+            <trans-unit id="form.show.error.subscriber.1221560718">
                 <source>Please enter your e-mail address</source>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1221559976">
+            <trans-unit id="form.show.error.subscriber.1221559976">
                 <source>Please enter a valid e-mail address</source>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1461581360">
+            <trans-unit id="form.show.error.subscriber.1461581360">
                 <source>The newsletter list was not found, please contact us</source>
+            </trans-unit>
+            <trans-unit id="form.show.error.subscriber.firstName.1221560718">
+                <source>Please enter your first name.</source>
+            </trans-unit>
+            <trans-unit id="form.show.error.subscriber.lastName.1221560718">
+                <source>Please enter your last name.</source>
             </trans-unit>
 
             <trans-unit id="form.error.header">
@@ -43,6 +49,15 @@
             </trans-unit>
             <trans-unit id="salutation_2">
                 <source>Frau</source>
+            </trans-unit>
+            <trans-unit id="firstName">
+                <source>First name*</source>
+            </trans-unit>
+            <trans-unit id="lastName">
+                <source>Last Name*</source>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>Email address*</source>
             </trans-unit>
         </body>
     </file>

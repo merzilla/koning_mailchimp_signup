@@ -12,17 +12,23 @@
             <trans-unit id="form.show.submit">
                 <target>Jetzt abonnieren</target>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1461581334">
+            <trans-unit id="form.show.error.subscriber.1461581334">
                 <target>Sie haben den Newsletter bereits abonniert.</target>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1221560718">
+            <trans-unit id="form.show.error.subscriber.1221560718">
                 <target>Bitte geben Sie Ihre E-Mail Adresse ein.</target>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1221559976">
+            <trans-unit id="form.show.error.subscriber.1221559976">
                 <target>Bitte geben sie eine gültige E-Mail Adresse ein.</target>
             </trans-unit>
-            <trans-unit id="form.show.error.email.1461581360">
+            <trans-unit id="form.show.error.subscriber.1461581360">
                 <target>Die Newsletter Liste konnte nicht gefunden werden, bitte kontaktieren Sie uns.</target>
+            </trans-unit>
+            <trans-unit id="form.show.error.subscriber.firstName.1221560718">
+                <target>Bitte geben Sie Ihren Vornamen ein.</target>
+            </trans-unit>
+            <trans-unit id="form.show.error.subscriber.lastName.1221560718">
+                <target>Bitte geben Sie Ihren Nachnamen ein.</target>
             </trans-unit>
 
             <trans-unit id="form.error.header">
@@ -43,6 +49,15 @@
             </trans-unit>
             <trans-unit id="salutation_2">
                 <target>Frau</target>
+            </trans-unit>
+            <trans-unit id="firstName">
+                <target>Vorname*</target>
+            </trans-unit>
+            <trans-unit id="lastName">
+                <target>Nachname*</target>
+            </trans-unit>
+            <trans-unit id="email">
+                <target>E-Mail*</target>
             </trans-unit>
         </body>
     </file>

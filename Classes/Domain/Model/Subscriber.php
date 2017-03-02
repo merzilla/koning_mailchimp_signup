@@ -20,16 +20,19 @@ class Subscriber extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * @var string
+     * @validate EmailAddress
      */
     protected $email;
 
     /**
      * @var string $firstName
+     * @validate NotEmpty
      */
     protected $firstName;
 
     /**
      * @var string $lastName
+     * @validate NotEmpty
      */
     protected $lastName;
 

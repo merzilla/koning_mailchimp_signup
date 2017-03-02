@@ -3,37 +3,52 @@
 <f:section name="Content">
     <f:form.validationResults>
         <f:if condition="{validationResults.flattenedErrors}">
-            <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
-                <f:for each="{errors}" as="error">
-                    <f:translate id="form.show.error.{propertyPath}.{error.code}"/>
+            <ul>
+                <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+                    <f:for each="{errors}" as="error">
+                        <li>
+                            <f:translate id="form.show.error.{propertyPath}.{error.code}"/>
+                        </li>
+                    </f:for>
                 </f:for>
-            </f:for>
+            </ul>
         </f:if>
     </f:form.validationResults>
     <f:form action="create" name="subscriber" object="{subscriber}" objectName="subscriber"
-            class="mmc-dms-form mailchimpWidget inlineLabel">
+            class="mmc-dms-form mailchimpWidget inlineLabel"
+            additionalAttributes="{data-parsley-validate: 'data-parsley-validate'}">
         <div class="fieldWrap powermail_fieldwrap">
             <div class="form-row">
-                <ul class="social form-row">
+                <ul class="social form-row signup-salutation">
                     <li>
-                        <f:form.radio property="salutation" value="1" id="salutation_male"/>
+                        <f:form.radio property="salutation" value="1" id="salutation_male" errorClass="parsley-error"
+                                      class="signup-salutation"
+                                      additionalAttributes="{required: '', data-parsley-errors-messages-disabled: '', data-parsley-multiple: 'salutation', data-parsley-class-handler: '.signup-salutation'}"/>
                         <label for="salutation_male">Herr</label>
                     </li>
                     <li>
-                        <f:form.radio property="salutation" value="2" id="salutation_female"/>
+                        <f:form.radio property="salutation" value="2" id="salutation_female" errorClass="parsley-error"
+                                      class="signup-salutation"
+                                      additionalAttributes="{required: '', data-parsley-errors-messages-disabled: '', data-parsley-multiple: 'salutation', data-parsley-class-handler: '.signup-salutation'}"/>
                         <label for="salutation_female">Frau</label>
                     </li>
                 </ul>
             </div>
             <p class="form-row">
-                <f:form.textfield property="firstName" placeholder="Vorname"/>
+                <f:form.textfield property="firstName" placeholder="{f:translate(key: 'firstName')}" required="required"
+                                  additionalAttributes="{data-parsley-trigger: 'change focusout'}"
+                                  class="powermail_input" errorClass="parsley-error"/>
             </p>
             <p class="form-row">
-                <f:form.textfield property="lastName" placeholder="Nachname"/>
+                <f:form.textfield property="lastName" placeholder="{f:translate(key: 'lastName')}" required="required"
+                                  additionalAttributes="{data-parsley-trigger: 'change focusout'}"
+                                  class="powermail_input" errorClass="parsley-error"/>
             </p>
             <p class="form-row">
-                <f:form.textfield property="email" type="text" errorClass="validate required email"
-                                  placeholder="E-Mail"/>
+                <f:form.textfield property="email" type="email" errorClass="validate required email"
+                                  placeholder="{f:translate(key: 'email')}" required="required"
+                                  additionalAttributes="{data-parsley-trigger: 'change focusout'}"
+                                  class="powermail_input" errorClass="parsley-error"/>
             </p>
             <p class="form-row">
                 <f:form.submit value="{f:translate(key: 'form.show.submit')}"/>

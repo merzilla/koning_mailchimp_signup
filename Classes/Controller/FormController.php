@@ -60,7 +60,7 @@ class FormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $subscriber->setList($list);
             $this->subscriberRepository->add($subscriber);
 
-            if (isset($this->settings['data']['successPid']) && (int) $this->settings['data']['failedPid'] > 0) {
+            if (isset($this->settings['data']['successPid']) && (int) $this->settings['data']['successPid'] > 0) {
                 $url = $this->uriBuilder->reset()->setTargetPageUid($this->settings['data']['successPid'])->build();
                 $this->redirectToUri($url);
             } else {
