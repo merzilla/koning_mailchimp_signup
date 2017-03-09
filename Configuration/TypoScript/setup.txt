@@ -11,3 +11,24 @@ plugin.tx_koningmailchimpsignup_form {
         }
     }
 }
+
+// you can insert the plugin via typoscript like: page.10.variables.mailchimp < lib.mailchimp
+lib.mailchimp = COA
+lib.mailchimp.10 = USER
+lib.mailchimp.10 {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    pluginName = Form
+    extensionName = KoningMailchimpSignup
+    vendorName = Keizer
+    controller = Form
+    #action = show
+
+    view < plugin.tx_koningmailchimpsignup_form.view
+    settings {
+        data {
+            list = {$lib.mailchimp.listUid}
+            successPid = {$lib.mailchimp.successPid}
+            failedPid = {$lib.mailchimp.failedPid}
+        }
+    }
+}

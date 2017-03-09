@@ -1,5 +1,8 @@
 #cat=mailchimp/plugin; type=int+; label= UID of Success page (when included via TypoScript e.g.), when = 0 stays on page
 lib.mailchimp.successPid = 0
 
-#cat=mailchimp/plugin; type=int+; label= UID of Success page (when included via TypoScript e.g.), when = 0 stays on page
+#cat=mailchimp/plugin; type=int+; label= UID of Failure page (if no list found) (when included via TypoScript e.g.), when = 0 stays on page
 lib.mailchimp.failedPid = 0
+
+#cat=mailchimp/plugin; type=int+; label= UID of the list tot register to (when included via TypoScript e.g.), when = 0 stays on page
+lib.mailchimp.listUid = 1

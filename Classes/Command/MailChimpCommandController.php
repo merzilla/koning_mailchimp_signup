@@ -82,7 +82,7 @@ class MailChimpCommandController extends  \TYPO3\CMS\Extbase\Mvc\Controller\Comm
             throw new \Exception('MailChimp settings not found. Check the Extension Manager for configuring the settings.');
         }
 
-        $subscribers = $this->subscriberRepository->findAllByLimit(25);
+        $subscribers = $this->subscriberRepository->findAllByLimit(100);
         if (!empty($subscribers)) {
             $settings = ConfigurationUtility::getConfiguration();
             $mailChimpApi = new \DrewM\MailChimp\MailChimp($settings['mailchimp.']['apiKey']);

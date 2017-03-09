@@ -57,10 +57,17 @@ class UniqueSubscriptionValidator extends \TYPO3\CMS\Extbase\Validation\Validato
         $flexFormService = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Service\\FlexFormService');
         $flexFormArray = $flexFormService->convertFlexFormContentToArray($this->contentObject->data['pi_flexform']);
 
-        // try with uid 1
+        // if empty read from typoscript
         if (empty($flexFormArray)) {
-            $flexFormArray['settings']['data']['list'] = 1;
+            if (is_array($GLOBALS['TSFE']->tmpl->setup['lib.']['mailchimp.']['10.']['settings.']['data.'])) {
+                $listUid = intval($GLOBALS['TSFE']->tmpl->setup['lib.']['mailchimp.']['10.']['settings.']['data.']['list']);
+            } else {
+                // try 1 then, which should be the first list
+                $listUid = 1;
+            }
+            $flexFormArray['settings']['data']['list'] = $listUid;
         }
+
 
         /** @var SubscriberList $list */
         $list = $this->subscriberListRepository->findByUid($flexFormArray['settings']['data']['list']);
