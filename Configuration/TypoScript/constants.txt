@@ -6,3 +6,6 @@ lib.mailchimp.failedPid = 0
 
 #cat=mailchimp/plugin; type=int+; label= UID of the list tot register to (when included via TypoScript e.g.), when = 0 stays on page
 lib.mailchimp.listUid = 1
+
+#cat=mailchimp/plugin; type=int+; label= UID of page when user is already registered (when included via TypoScript e.g.), when = 0 stays on page
+lib.mailchimp.alreadyRegisteredPid = 0

@@ -29,6 +29,7 @@ lib.mailchimp.10 {
             list = {$lib.mailchimp.listUid}
             successPid = {$lib.mailchimp.successPid}
             failedPid = {$lib.mailchimp.failedPid}
+            alreadyRegisteredPid = {$lib.mailchimp.alreadyRegisteredPid}
         }
     }
 }

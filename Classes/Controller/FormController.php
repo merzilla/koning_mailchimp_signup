@@ -43,6 +43,19 @@ class FormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         if (!isset($this->settings['data']['list']) || !ctype_digit($this->settings['data']['list'])) {
             throw new \Exception('No MailChimp list selected: check plugin configuration.');
         }
+        $validationResults = $this->request->getOriginalRequestMappingResults();
+        if ($validationResults !== null) {
+            $validationResults = $validationResults->forProperty('subscriber');
+            $errors = $validationResults->getErrors();
+            // this redirect is performed if the user is already registered and a UID to redirect to is set
+            if (!empty($errors) && $errors[0]->getCode() == 1461581334 && isset($this->settings['data']['alreadyRegisteredPid']) && (int)$this->settings['data']['alreadyRegisteredPid'] > 0) {
+                $url = $this->uriBuilder->reset()->setTargetPageUid($this->settings['data']['alreadyRegisteredPid'])->build();
+                $this->redirectToUri($url);
+            }
+            if (!empty($errors)) {
+                $this->redirect('failed');
+            }
+        }
     }
 
     /**
