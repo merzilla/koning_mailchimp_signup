@@ -53,7 +53,12 @@ class FormController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 $this->redirectToUri($url);
             }
             if (!empty($errors)) {
-                $this->redirect('failed');
+                if (isset($this->settings['data']['failedPid']) && (int)$this->settings['data']['failedPid'] > 0) {
+                    $url = $this->uriBuilder->reset()->setTargetPageUid($this->settings['data']['failedPid'])->build();
+                    $this->redirectToUri($url);
+                } else {
+                    $this->redirect('failed');
+                }
             }
         }
     }
