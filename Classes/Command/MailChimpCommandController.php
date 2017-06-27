@@ -70,16 +70,24 @@ class MailChimpCommandController extends  \TYPO3\CMS\Extbase\Mvc\Controller\Comm
     /**
      * Adds subscribers from TYPO3 to MailChimp
      *
+     * @param boolean $enableDoubleOptIn Here you can enable doubleOptIn, default is false
+     *
      * @return bool
      * @throws \Exception
      */
-    public function subscribersCommand()
+    public function subscribersCommand($enableDoubleOptIn = false)
     {
         if (!class_exists('\DrewM\MailChimp\MailChimp')) {
             throw new \Exception('MailChimp API wrapper not found. Run composer require drewm/mailchimp-api to install it and make sure vendor/autoload.php is included.');
         }
         if (!ConfigurationUtility::isValid()) {
             throw new \Exception('MailChimp settings not found. Check the Extension Manager for configuring the settings.');
+        }
+
+        if ($enableDoubleOptIn === true) {
+            $status = 'pending';
+        } else {
+            $status = 'subscribed';
         }
 
         $subscribers = $this->subscriberRepository->findAllByLimit(100);
@@ -97,7 +105,7 @@ class MailChimpCommandController extends  \TYPO3\CMS\Extbase\Mvc\Controller\Comm
                             'LNAME' => (!empty($subscriber->getLastName())) ? $subscriber->getLastName() : '',
                             'SALUTATION' => (!empty($subscriber->getSalutation())) ? $subscriber->getSalutation() : 'Herr',
                         ],
-                        'status' => 'subscribed'
+                        'status' => $status
                     ]
                 );
                 $delete = false;
