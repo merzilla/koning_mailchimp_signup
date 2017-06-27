@@ -114,6 +114,9 @@ class MailChimpCommandController extends  \TYPO3\CMS\Extbase\Mvc\Controller\Comm
                         case 'subscribed':
                             $delete = true;
                             break;
+                        case 'pending':
+                            $delete = true;
+                            break;
                         case 400:
                         default:
                             if ($result['title'] === 'Member Exists') {
